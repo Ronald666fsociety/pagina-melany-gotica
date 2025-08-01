@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Reina Oscura Melany 🖤</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Nosifer&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000000;
+            min-height: 100vh;
+            font-family: 'Metal Mania', cursive;
+            color: #ff6666;
+            overflow-x: hidden;
+            position: relative;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff0000" opacity="0.5"/><circle cx="10" cy="10" r="3" fill="%23ffffff"/></svg>'), auto;
+        }
+
+        /* Fondo animado con múltiples capas */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Sangre goteando */
+        .blood-drops {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .blood-drop {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ff0000, #8b0000, #660000);
+            border-radius: 0 0 50% 50%;
+            animation: blood-fall linear infinite;
+            opacity: 0.8;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        @keyframes blood-fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Nubes oscuras en movimiento */
+        .dark-clouds {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 400px 100px at 50% 0%, rgba(20, 20, 20, 0.8) 0%, transparent 100%),
+                radial-gradient(ellipse 300px 80px at 30% 20%, rgba(40, 0, 0, 0.6) 0%, transparent 100%),
+                radial-gradient(ellipse 500px 120px at 70% 10%, rgba(60, 20, 20, 0.4) 0%, transparent 100%);
+            animation: clouds-drift 20s linear infinite;
+        }
+
+        @keyframes clouds-drift {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* Partículas de fuego flotantes */
+        .fire-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .fire-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #ff4500, #ff0000, transparent);
+            border-radius: 50%;
+            animation: fire-float linear infinite;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+        }
+
+        @keyframes fire-float {
+            0% {
+                transform: translateY(100vh) translateX(0px) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Rayos mejorados */
+        .lightning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .bolt {
+            position: absolute;
+            width: 3px;
+            height: 100vh;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                #ffffff 5%, 
+                #ff0000 10%, 
+                #8b0000 50%, 
+                transparent 100%);
+            animation: lightning 6s infinite;
+            opacity: 0;
+            filter: blur(1px);
+            box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+        }
+        
+        @keyframes lightning {
+            0%, 90%, 100% { opacity: 0; }
+            2%, 4% { opacity: 1; transform: scaleX(1.5); }
+            6%, 8% { opacity: 0; }
+            10%, 12% { opacity: 1; transform: scaleX(2); }
+            14% { opacity: 0; }
+        }
+
+        /* Vórtice de energía oscura */
+        .dark-vortex {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            margin: -150px 0 0 -150px;
+            background: 
+                conic-gradient(from 0deg, 
+                    transparent 0deg, 
+                    rgba(139, 0, 0, 0.3) 90deg, 
+                    rgba(255, 0, 0, 0.2) 180deg, 
+                    rgba(139, 0, 0, 0.3) 270deg, 
+                    transparent 360deg);
+            border-radius: 50%;
+            animation: vortex-spin 8s linear infinite;
+            opacity: 0.4;
+        }
+
+        @keyframes vortex-spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Ondas de energía */
+        .energy-waves {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            margin: -250px 0 0 -250px;
+        }
+
+        .energy-wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            border-radius: 50%;
+            animation: energy-pulse 4s ease-out infinite;
+        }
+
+        .energy-wave:nth-child(2) { animation-delay: 1s; }
+        .energy-wave:nth-child(3) { animation-delay: 2s; }
+        .energy-wave:nth-child(4) { animation-delay: 3s; }
+
+        @keyframes energy-pulse {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        /* Humo mejorado */
+        .smoke {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: 
+                linear-gradient(to top, 
+                    rgba(50, 0, 0, 0.8) 0%,
+                    rgba(80, 20, 20, 0.6) 30%,
+                    rgba(100, 50, 50, 0.3) 60%,
+                    transparent 100%);
+            z-index: 3;
+            animation: smoke-drift 15s infinite ease-in-out;
+            pointer-events: none;
+        }
+        
+        @keyframes smoke-drift {
+            0%, 100% { 
+                transform: translateX(-20px) scaleY(1); 
+                filter: blur(2px);
+            }
+            33% { 
+                transform: translateX(20px) scaleY(1.1); 
+                filter: blur(3px);
+            }
+            66% { 
+                transform: translateX(-10px) scaleY(0.9); 
+                filter: blur(1px);
+            }
+        }
+        
+        /* Pentagramas flotantes mejorados */
+        .pentagram {
+            position: fixed;
+            color: #8b0000;
+            font-size: 1.8rem;
+            animation: float-pentagram 12s infinite linear;
+            opacity: 0.4;
+            z-index: 4;
+            pointer-events: none;
+            text-shadow: 0 0 10px #ff0000;
+            filter: drop-shadow(0 0 5px #8b0000);
+        }
+        
+        @keyframes float-pentagram {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .main-title {
+            font-family: 'Nosifer', cursive;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff0000;
+            text-shadow: 
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000,
+                0 0 40px #ff0000,
+                2px 2px 0px #000000,
+                4px 4px 0px #660000;
+            animation: flame-text 3s ease-in-out infinite alternate;
+            filter: drop-shadow(3px 3px 6px #000000);
+            transform-style: preserve-3d;
+        }
+        
+        @keyframes flame-text {
+            0% { 
+                text-shadow: 
+                    0 0 10px #ff0000,
+                    0 0 20px #ff0000,
+                    0 0 30px #ff0000,
+                    2px 2px 0px #000000,
+                    4px 4px 0px #660000;
+                transform: perspective(500px) rotateX(0deg);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 15px #ff6600,
+                    0 0 25px #ff3300,
+                    0 0 35px #ff0000,
+                    0 0 45px #cc0000,
+                    3px 3px 0px #000000,
+                    6px 6px 0px #330000;
+                transform: perspective(500px) rotateX(5deg);
+            }
+        }
+        
+        .subtitle {
+            font-family: 'Metal Mania', cursive;
+            font-size: 1.8rem;
+            color: #cccccc;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 
+                2px 2px 4px #000000,
+                0 0 10px #ff0000;
+            border: 3px solid #666666;
+            padding: 15px 25px;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(40, 0, 0, 0.8)),
+                radial-gradient(circle at center, rgba(255, 0, 0, 0.1), transparent);
+            border-radius: 15px;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 0, 0.3),
+                inset 0 0 20px rgba(0, 0, 0, 0.8);
+            animation: subtitle-glow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes subtitle-glow {
+            0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.8); }
+            100% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.6), inset 0 0 30px rgba(139, 0, 0, 0.3); }
+        }
+        
+        .heart-container {
+            position: relative;
+            margin: 40px 0;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            filter: drop-shadow(0 0 20px #ff0000);
+            z-index: 15;
+            animation: heart-hover 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes heart-hover {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-5px); }
+        }
+        
+        .heart-container:hover {
+            transform: scale(1.3) translateY(-10px);
+            filter: drop-shadow(0 0 40px #ff0000);
+        }
+        
+        .heart {
+            width: 120px;
+            height: 108px;
+            position: relative;
+            margin: 0 auto;
+            animation: dark-heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 62px;
+            height: 96px;
+            position: absolute;
+            left: 60px;
+            top: 0;
+            background: 
+                linear-gradient(45deg, 
+                    #ff0000 0%, 
+                    #cc0000 25%, 
+                    #8b0000 50%, 
+                    #660000 75%, 
+                    #330000 100%);
+            border-radius: 62px 62px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 0, 0.8),
+                inset 0 0 20px rgba(0, 0, 0, 0.4),
+                inset 5px 5px 10px rgba(255, 100, 100, 0.3);
+            border: 2px solid #ff6666;
+        }
+        
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
+        @keyframes dark-heartbeat {
+            0%, 100% { 
+                transform: scale(1);
+                filter: brightness(1) hue-rotate(0deg);
+            }
+            50% { 
+                transform: scale(1.2);
+                filter: brightness(1.4) hue-rotate(10deg);
+            }
+        }
+        
+        .click-text {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 20px;
+            animation: pulse-red 2.5s infinite;
+            color: #ff6666;
+            font-family: 'Metal Mania', cursive;
+            text-shadow: 
+                2px 2px 4px #000000,
+                0 0 10px #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        
+        @keyframes pulse-red {
+            0%, 100% { 
+                opacity: 0.7; 
+                color: #ff6666; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1; 
+                color: #ff0000; 
+                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff3300;
+                transform: scale(1.05);
+            }
+        }
+        
+        .message-container {
+            max-width: 900px;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(0, 0, 0, 0.95) 0%, 
+                    rgba(25, 0, 0, 0.9) 50%, 
+                    rgba(0, 0, 0, 0.95) 100%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.2), transparent);
+            border: 4px solid #8b0000;
+            border-radius: 25px;
+            padding: 40px;
+            margin: 30px auto;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 0 60px rgba(139, 0, 0, 0.8),
+                inset 0 0 30px rgba(255, 0, 0, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transform: translateY(80px) scale(0.8) rotateX(20deg);
+            transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            z-index: 20;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        
+        .message-container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, 
+                #ff0000 0%, 
+                #8b0000 25%, 
+                #660000 50%, 
+                #8b0000 75%, 
+                #ff0000 100%);
+            z-index: -1;
+            border-radius: 28px;
+            animation: border-glow 4s infinite;
+        }
+        
+        @keyframes border-glow {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.02);
+            }
+        }
+        
+        .message-container.show {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg);
+            visibility: visible;
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            line-height: 2;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffcccc;
+            font-family: 'Metal Mania', cursive;
+            text-shadow: 
+                1px 1px 2px #000000,
+                0 0 5px #ff0000;
+            animation: text-flicker 6s ease-in-out infinite;
+        }
+
+        @keyframes text-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+            51% { opacity: 1; }
+            52% { opacity: 0.98; }
+        }
+        
+        .signature {
+            font-family: 'Creepster', cursive;
+            font-size: 2.2rem;
+            text-align: right;
+            margin-top: 30px;
+            color: #ff0000;
+            text-shadow: 
+                0 0 15px #ff0000,
+                2px 2px 4px #000000;
+            animation: signature-glow 3s infinite alternate;
+            transform: perspective(300px) rotateY(-5deg);
+        }
+        
+        @keyframes signature-glow {
+            0% { 
+                text-shadow: 0 0 15px #ff0000, 2px 2px 4px #000000;
+                transform: perspective(300px) rotateY(-5deg) scale(1);
+            }
+            100% { 
+                text-shadow: 0 0 25px #ff0000, 0 0 35px #ff6666, 3px 3px 6px #000000;
+                transform: perspective(300px) rotateY(-3deg) scale(1.02);
+            }
+        }
+        
+        .skulls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        .skull {
+            font-size: 2.5rem;
+            animation: menacing-sway 5s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px #ff0000);
+            text-shadow: 0 0 10px #8b0000;
+        }
+        
+        .skull:nth-child(even) {
+            animation-delay: 2.5s;
+        }
+        
+        @keyframes menacing-sway {
+            0%, 100% { 
+                transform: rotate(-15deg) scale(1) translateY(0px); 
+                filter: drop-shadow(0 0 15px #ff0000);
+            }
+            25% { 
+                transform: rotate(5deg) scale(1.1) translateY(-5px); 
+                filter: drop-shadow(0 0 25px #ff3300);
+            }
+            50% { 
+                transform: rotate(15deg) scale(1.05) translateY(-3px); 
+                filter: drop-shadow(0 0 20px #ff0000);
+            }
+            75% { 
+                transform: rotate(-5deg) scale(1.08) translateY(-7px); 
+                filter: drop-shadow(0 0 30px #cc0000);
+            }
+        }
+        
+        .ozzy-gif {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            border: 6px solid #ff0000;
+            border-radius: 25px;
+            box-shadow: 
+                0 0 60px rgba(255, 0, 0, 0.9),
+                0 0 100px rgba(255, 0, 0, 0.6),
+                inset 0 0 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            visibility: hidden;
+            transform-style: preserve-3d;
+        }
+        
+        .ozzy-gif.show {
+            opacity: 1;
+            visibility: visible;
+            animation: ozzy-entrance 1s ease-out;
+        }
+
+        @keyframes ozzy-entrance {
+            0% { 
+                transform: translate(-50%, -50%) scale(0.3) rotateY(180deg);
+                opacity: 0;
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.1) rotateY(90deg);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+                opacity: 1;
+            }
+        }
+        
+        .audio-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 50;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(40, 0, 0, 0.8));
+            padding: 15px;
+            border-radius: 15px;
+            border: 3px solid #ff0000;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 0, 0.5),
+                inset 0 0 20px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .audio-controls button {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            border: 2px solid #ff6666;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px #000000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .audio-controls button:hover {
+            background: linear-gradient(135deg, #ff3300, #ff0000);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .volume-control {
+            margin-left: 15px;
+        }
+
+        .volume-control input {
+            width: 90px;
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .volume-control input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #ff0000;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+        
+        @keyframes flash {
+            0% { opacity: 0; }
+            50% { opacity: 0.4; }
+            100% { opacity: 0; }
+        }
+        
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1.8); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        
+        @keyframes ember-fade {
+            0% { opacity: 1; transform: scale(1) rotate(0deg); }
+            100% { 
+                opacity: 0; 
+                transform: scale(0) translateY(-30px) rotate(180deg); 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.8rem;
+            }
+            .message {
+                font-size: 1.2rem;
+            }
+            .message-container {
+                padding: 25px;
+                margin: 15px;
+            }
+            .ozzy-gif img {
+                max-width: 90vw;
+                max-height: 50vh;
+            }
+            .audio-controls {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo animado multicapa -->
+    <div class="animated-bg">
+        <!-- Sangre goteando -->
+        <div class="blood-drops"></div>
+        
+        <!-- Nubes oscuras -->
+        <div class="dark-clouds"></div>
+        
+        <!-- Partículas de fuego -->
+        <div class="fire-particles"></div>
+        
+        <!-- Vórtice oscuro -->
+        <div class="dark-vortex"></div>
+        
+        <!-- Ondas de energía -->
+        <div class="energy-waves">
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+            <div class="energy-wave"></div>
+        </div>
+    </div>
+
+    <div class="lightning"></div>
+    <div class="smoke"></div>
+    
+    <div class="container">
+        <h1 class="main-title">Para Mi Diosa</h1>
+        <div class="subtitle">🖤 MELANY 🖤<br>Feliz Dia De La Novia</div>
+        
+        <div class="heart-container" onclick="unleashTheDarkness()">
+            <div class="heart"></div>
+            <p class="click-text">Desata la Oscuridad 🔥</p>
+        </div>
+        
+        <div class="message-container" id="messageContainer">
+            <div class="message">
+                Mi amada Melany,<br><br>
+                Estoy inmensamente agradecido de tenerte a mi lado, mi amor. No tienes idea de cuánta felicidad me das
+                cada día. Eres mi vida entera, y estoy completamente seguro de que no existe nadie más a quien quiera
+                amar que a ti.
+                <br><br>
+                Eres todo para mí, mi cielo. Quiero pasar el resto de mi vida contigo, porque sé que fuimos hechos el uno
+                para el otro. Juntos vamos a alcanzar todo lo que soñamos: una vida compartida, nuestros logros, una
+                hermosa familia... todo contigo, mi amorcito.
+                 <br><br>
+                 ¡Te amo con locura y con el alma! ¡Nunca lo olvides!
+                 <br><br>
+                 P.D.: Eres mi diosa, la luz que me guía en la oscuridad más profunda. Que nuestro amor arda eternamente
+                 como las llamas del infierno más dulce.
+            </div>
+            <div class="signature">Tu Rey Oscuro 👹🖤</div>
+        </div>
+    </div>
+    
+    <div class="skulls">
+        <span class="skull">💀</span>
+        <span class="skull">☠️</span>
+        <span class="skull">💀</span>
+        <span class="skull">☠️</span>
+        <span class="skull">💀</span>
+    </div>
+    
+    <div class="audio-controls">
+        <button onclick="toggleMusic()" id="musicBtn">🎵 Música</button>
+        <div class="volume-control">
+            <input type="range" id="volumeSlider" min="0" max="100" value="70" onchange="changeVolume()">
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" loop preload="auto" style="display: none;">
+        <source src="./W.A.S.P. - Hold On To My Heart.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <script>
+        let musicPlaying = false;
+        let audioContext;
+        let darkMelodyInterval;
+        let messageShown = false;
+
+        // Inicialización cuando la página carga
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔥 Iniciando el reino oscuro...');
+            
+            const audio = document.getElementById('backgroundMusic');
+            const volumeSlider = document.getElementById('volumeSlider');
+
+            // Configura el volumen inicial
+            audio.volume = volumeSlider.value / 100;
+
+            // Confirma que el audio puede reproducirse
+            audio.addEventListener('canplaythrough', function() {
+                console.log('🎵 Audio del inframundo listo');
+            });
+
+            // Muestra un error si no puede cargar el audio
+            audio.addEventListener('error', function(e) {
+                console.error('💀 Error invocando el audio:', e);
+                document.getElementById('musicBtn').textContent = '❌ Ritual Fallido';
+            });
+
+            // Iniciar efectos de fondo
+            initializeBloodDrops();
+            initializeFireParticles();
+            createLightning();
+            setInterval(createPentagrams, 4000);
+            setInterval(createLightning, 12000);
+            
+            console.log('👹 Reino oscuro completamente cargado');
+        });
+
+        // Crear gotas de sangre
+        function initializeBloodDrops() {
+            const bloodContainer = document.querySelector('.blood-drops');
+            
+            function createBloodDrop() {
+                const drop = document.createElement('div');
+                drop.className = 'blood-drop';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                drop.style.animationDelay = Math.random() * 2 + 's';
+                bloodContainer.appendChild(drop);
+                
+                setTimeout(() => {
+                    if (drop.parentNode) {
+                        drop.remove();
+                    }
+                }, 8000);
+            }
+            
+            // Crear gotas continuamente
+            setInterval(createBloodDrop, 800);
+        }
+
+        // Crear partículas de fuego
+        function initializeFireParticles() {
+            const fireContainer = document.querySelector('.fire-particles');
+            
+            function createFireParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'fire-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                fireContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 10000);
+            }
+            
+            // Crear partículas continuamente
+            setInterval(createFireParticle, 600);
+        }
+
+        // Cambiar volumen del audio
+        function changeVolume() {
+            const audio = document.getElementById('backgroundMusic');
+            const volumeSlider = document.getElementById('volumeSlider');
+            audio.volume = volumeSlider.value / 100;
+            console.log('🔊 Volumen del ritual ajustado:', audio.volume);
+        }
+
+        // Controlar música
+        function toggleMusic() {
+            const audio = document.getElementById('backgroundMusic');
+            const musicBtn = document.getElementById('musicBtn');
+
+            if (audio.paused) {
+                audio.play().then(() => {
+                    musicPlaying = true;
+                    musicBtn.textContent = '⏸️ Silenciar Ritual';
+                    console.log('🎵 Invocación musical iniciada');
+                }).catch(error => {
+                    console.error('💀 Error en ritual musical:', error);
+                    musicBtn.textContent = '❌ Ritual Fallido';
+                });
+            } else {
+                audio.pause();
+                musicPlaying = false;
+                musicBtn.textContent = '🎵 Iniciar Ritual';
+                console.log('🔇 Ritual musical pausado');
+            }
+        }
+        
+        // Crear rayos mejorados
+        function createLightning() {
+            const lightningContainer = document.querySelector('.lightning');
+            lightningContainer.innerHTML = '';
+            
+            for (let i = 0; i < 8; i++) {
+                const bolt = document.createElement('div');
+                bolt.className = 'bolt';
+                bolt.style.left = Math.random() * 100 + '%';
+                bolt.style.animationDelay = Math.random() * 6 + 's';
+                bolt.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                bolt.style.height = (80 + Math.random() * 20) + 'vh';
+                lightningContainer.appendChild(bolt);
+            }
+            console.log('⚡ Rayos infernales invocados');
+        }
+        
+        // Crear pentagramas flotantes
+        function createPentagrams() {
+            const symbols = ['⛤', '⛧', '☽', '☾', '🔥', '🗲', '⚡', '💀'];
+            for (let i = 0; i < 4; i++) {
+                const pentagram = document.createElement('div');
+                pentagram.className = 'pentagram';
+                pentagram.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                pentagram.style.left = Math.random() * 100 + '%';
+                pentagram.style.animationDelay = Math.random() * 12 + 's';
+                pentagram.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                pentagram.style.fontSize = (1.2 + Math.random() * 1) + 'rem';
+                document.body.appendChild(pentagram);
+                
+                setTimeout(() => {
+                    if (pentagram.parentNode) {
+                        pentagram.remove();
+                    }
+                }, 15000);
+            }
+            console.log('⛧ Símbolos ancestrales liberados');
+        }
+        
+        // Crear partículas oscuras mejoradas
+        function createDarkParticles() {
+            const symbols = ['🔥', '⚡', '💀', '🖤', '⛧', '☠️', '🗲'];
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                    particle.style.position = 'fixed';
+                    particle.style.color = '#ff0000';
+                    particle.style.fontSize = (1.2 + Math.random() * 0.8) + 'rem';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = '100%';
+                    particle.style.zIndex = '25';
+                    particle.style.animation = 'float-pentagram 5s ease-out forwards';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.textShadow = '0 0 15px #ff0000, 0 0 25px #ff3300';
+                    particle.style.filter = 'drop-shadow(0 0 10px #8b0000)';
+                    document.body.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.remove();
+                        }
+                    }, 5000);
+                }, i * 200);
+            }
+        }
+        
+        // Función principal - Desatar la oscuridad
+        function unleashTheDarkness() {
+            console.log('👹 ¡DESATANDO EL PODER DE LA OSCURIDAD!');
+            
+            const messageContainer = document.getElementById('messageContainer');
+            const ozzyGif = document.getElementById('ozzyGif');
+            const audio = document.getElementById('backgroundMusic');
+            
+            if (!messageShown) {
+                messageShown = true;
+                
+                // Mostrar el mensaje con efecto dramático
+                setTimeout(() => {
+                    messageContainer.classList.add('show');
+                }, 500);
+                
+                // Mostrar GIF de Ozzy con retraso
+                setTimeout(() => {
+                    ozzyGif.classList.add('show');
+                }, 1000);
+                
+                // Intentar reproducir música automáticamente
+                if (!musicPlaying) {
+                    audio.play().then(() => {
+                        musicPlaying = true;
+                        document.getElementById('musicBtn').textContent = '⏸️ Silenciar Ritual';
+                        console.log('🎵 Ritual musical auto-iniciado');
+                    }).catch(error => {
+                        console.log('🔇 Auto-reproducción bloqueada:', error);
+                        document.getElementById('musicBtn').textContent = '🎵 Iniciar Ritual';
+                    });
+                }
+                
+                // Efectos visuales en secuencia
+                createScreenFlash();
+                setTimeout(() => createFireworks(), 300);
+                setTimeout(() => createDarkParticles(), 600);
+                setTimeout(() => createBloodExplosion(), 900);
+                setTimeout(() => createEnergyBurst(), 1200);
+                
+                // Efectos de rayos adicionales
+                setTimeout(() => createLightning(), 1500);
+                
+                // Ocultar GIF después de 10 segundos
+                setTimeout(() => {
+                    ozzyGif.classList.remove('show');
+                }, 10000);
+                
+                // Cambiar texto del corazón
+                document.querySelector('.click-text').innerHTML = '¡Poder Desatado! 🔥💀<br>¡El Ritual está Completo!';
+                
+                console.log('💀 Ritual de oscuridad completado exitosamente');
+            } else {
+                // Si ya se activó, crear efectos adicionales
+                createFireworks();
+                createDarkParticles();
+                console.log('⚡ Poder adicional liberado');
+            }
+        }
+        
+        // Flash de pantalla mejorado
+        function createScreenFlash() {
+            const flash = document.createElement('div');
+            flash.style.position = 'fixed';
+            flash.style.top = '0';
+            flash.style.left = '0';
+            flash.style.width = '100%';
+            flash.style.height = '100%';
+            flash.style.background = 'radial-gradient(circle, #ff0000 0%, #ffffff 50%, #ff0000 100%)';
+            flash.style.opacity = '0';
+            flash.style.zIndex = '999';
+            flash.style.pointerEvents = 'none';
+            flash.style.animation = 'flash 0.4s ease-out';
+            flash.style.mixBlendMode = 'screen';
+            document.body.appendChild(flash);
+            
+            setTimeout(() => {
+                if (flash.parentNode) {
+                    flash.remove();
+                }
+            }, 400);
+            console.log('⚡ Flash infernal ejecutado');
+        }
+        
+        // Fuegos artificiales mejorados
+        function createFireworks() {
+            const colors = ['#ff0000', '#ff3300', '#ff6600', '#cc0000', '#990000'];
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.innerHTML = '💥';
+                    firework.style.position = 'fixed';
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 100 + '%';
+                    firework.style.fontSize = (2 + Math.random() * 1.5) + 'rem';
+                    firework.style.zIndex = '30';
+                    firework.style.animation = 'explode 1.5s ease-out forwards';
+                    firework.style.pointerEvents = 'none';
+                    firework.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.textShadow = '0 0 20px currentColor';
+                    firework.style.filter = 'drop-shadow(0 0 15px currentColor)';
+                    document.body.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        if (firework.parentNode) {
+                            firework.remove();
+                        }
+                    }, 1500);
+                }, i * 80);
+            }
+            console.log('💥 Explosiones infernales desatadas');
+        }
+
+        // Explosión de sangre
+        function createBloodExplosion() {
+            for (let i = 0; i < 20; i++) {
+                const bloodDrop = document.createElement('div');
+                bloodDrop.innerHTML = '🩸';
+                bloodDrop.style.position = 'fixed';
+                bloodDrop.style.left = '50%';
+                bloodDrop.style.top = '50%';
+                bloodDrop.style.fontSize = '1.5rem';
+                bloodDrop.style.zIndex = '25';
+                bloodDrop.style.pointerEvents = 'none';
+                bloodDrop.style.animation = `explode ${1 + Math.random()}s ease-out forwards`;
+                bloodDrop.style.transform = `rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(bloodDrop);
+                
+                setTimeout(() => {
+                    if (bloodDrop.parentNode) {
+                        bloodDrop.remove();
+                    }
+                }, 2000);
+            }
+            console.log('🩸 Lluvia de sangre invocada');
+        }
+
+        // Ráfaga de energía
+        function createEnergyBurst() {
+            const energyRing = document.createElement('div');
+            energyRing.style.position = 'fixed';
+            energyRing.style.top = '50%';
+            energyRing.style.left = '50%';
+            energyRing.style.width = '50px';
+            energyRing.style.height = '50px';
+            energyRing.style.margin = '-25px 0 0 -25px';
+            energyRing.style.border = '3px solid #ff0000';
+            energyRing.style.borderRadius = '50%';
+            energyRing.style.zIndex = '35';
+            energyRing.style.pointerEvents = 'none';
+            energyRing.style.boxShadow = '0 0 30px #ff0000, inset 0 0 30px #ff0000';
+            energyRing.style.animation = 'energy-pulse 2s ease-out forwards';
+            document.body.appendChild(energyRing);
+            
+            setTimeout(() => {
+                if (energyRing.parentNode) {
+                    energyRing.remove();
+                }
+            }, 2000);
+            console.log('🔮 Ráfaga de energía oscura liberada');
+        }
+        
+        // Cursor personalizado con efectos mejorados
+        let emberTimeout;
+        let emberCount = 0;
+        document.addEventListener('mousemove', function(e) {
+            if (!emberTimeout && Math.random() < 0.03 && emberCount < 5) {
+                emberTimeout = setTimeout(() => {
+                    emberCount++;
+                    const ember = document.createElement('div');
+                    ember.innerHTML = ['🔥', '⚡', '💀'][Math.floor(Math.random() * 3)];
+                    ember.style.position = 'fixed';
+                    ember.style.left = (e.clientX - 10) + 'px';
+                    ember.style.top = (e.clientY - 10) + 'px';
+                    ember.style.fontSize = '1.2rem';
+                    ember.style.pointerEvents = 'none';
+                    ember.style.zIndex = '40';
+                    ember.style.animation = 'ember-fade 3s ease-out forwards';
+                    ember.style.color = '#ff0000';
+                    ember.style.textShadow = '0 0 10px #ff0000';
+                    ember.style.filter = 'drop-shadow(0 0 5px #8b0000)';
+                    document.body.appendChild(ember);
+                    
+                    setTimeout(() => {
+                        if (ember.parentNode) {
+                            ember.remove();
+                        }
+                        emberCount--;
+                    }, 3000);
+                    
+                    emberTimeout = null;
+                }, 50);
+            }
+        });
+        
+        // Limpiar recursos al salir
+        window.addEventListener('beforeunload', function() {
+            if (darkMelodyInterval) {
+                clearInterval(darkMelodyInterval);
+            }
+            if (audioContext && audioContext.state !== 'closed') {
+                audioContext.close();
+            }
+            console.log('👹 Cerrando portal al reino oscuro...');
+        });
+
+        // Easter egg: Konami Code para efectos especiales
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.code);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                console.log('🔥 ¡CÓDIGO SECRETO ACTIVADO!');
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        createFireworks();
+                        createDarkParticles();
+                    }, i * 100);
+                }
+                konamiCode = [];
+            }
+        });
+
+        console.log('👹 Sistema del reino oscuro inicializado completamente');
+    </script>
+</body>
+</html>
